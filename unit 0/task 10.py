@@ -40,17 +40,20 @@ for i in line:
 print(count) # 12
 
 ## 5
-ch = set([str(i) for i in range(10)])
+numbers = set([str(i) for i in range(10)])
+letters = ''
 v = set()
 line = 'kn1mb9c7c5cv5cc9cvv7cx9sd8nm4cz2bm4k6hf9d'
 for i in line:
-    if i in ch:
+    if i in numbers:
         v.add(int(i))
+    else:
+        letters += i
 
-otvet = ''
-if len(v) > 0:
-    for i in v:
-        otvet += str(i)
-    print(otvet) # 12456789
-else:
+answer = ''
+if len(letters) == 0:
     print('NO')
+else:
+    for i in v:
+        answer += str(i)
+    print(answer) # 12456789
