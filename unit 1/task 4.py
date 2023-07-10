@@ -1,29 +1,29 @@
 ## 1
-# for i in ['Вотяку', 'Вотякову', 'Вотяковчу']:
-#     for j in ['Александру', 'Алексу', 'Альберту']:
-#         print(f"Диплом с отличием вручается {i} {j} Романовичу.")
+for i in ['Вотяку', 'Вотякову', 'Вотяковчу']:
+    for j in ['Александру', 'Алексу', 'Альберту']:
+        print(f"Диплом с отличием вручается {i} {j} Романовичу.")
 
 ## 2
-# a = input()
-# b = int(input())
-# c = int(input())
-# print(f"{a}{b:04}-{c:03}") # ABC0024-001
+a = input()
+b = int(input())
+c = int(input())
+print(f"{a}{b:04}-{c:03}") # ABC0024-001
 
 ## 3
-# a = int(input())
-# b = int(input())
-# print(f"{a:>9}\n {b:>8}\n {a + b:>8}")
+a = int(input())
+b = int(input())
+print(f"{a:>9}\n {b:>8}\n {a + b:>8}")
 #     10492
 #       789
 #     11281
 
 ## 4
-# r = int(input()) / 100
-# k = int(input())
-# summa = 100_000_000
-# for i in range(k):
-#     summa += summa * r
-# print(f'{summa:,.2f}') # 112,682,503.01
+r = int(input()) / 100
+k = int(input())
+summa = 100_000_000
+for i in range(k):
+    summa += summa * r
+print(f'{summa:,.2f}') # 112,682,503.01
 
 ## 5
 for a in range(1, 11):
