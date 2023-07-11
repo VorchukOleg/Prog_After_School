@@ -37,19 +37,15 @@ print(calculate_total_price(500)) # 500
 
 ## 5
 def custom_print(*args, **kwargs):
-    separ = ' '
-    ending = ''
-    answer = ''
+    separ = kwargs.get('sep', ' ')
+    ending = kwargs.get('end', '') + '\n'
+    answer = []
     for i in args:
-        answer += str(i)
-    for i in kwargs:
-        if i == 'sep':
-            separ = kwargs[i]
-        elif i == 'end':
-            ending = kwargs[i]
-        else:
-            answer += str(kwargs[i])
-    print(answer, sep=separ, end=ending)
+        answer.append(str(i))
+    for k, i in kwargs.items():
+        if k not in ['sep', 'end']:
+            answer.append(f'{k}={i}')
+    print(separ.join(answer), end=ending)
 
 
 custom_print(1, 2, 3, a=4, b=5, sep='-', end='!')
