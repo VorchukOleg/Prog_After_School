@@ -1,9 +1,9 @@
 ## 1
-# try:
-#     line = [float(i) for i in input().split() if i != '/']
-#     print(line[0]/line[1])
-# except ZeroDivisionError:
-#     print('ERROR')
+try:
+    line = [float(i) for i in input().split() if i != '/']
+    print(line[0]/line[1])
+except ZeroDivisionError:
+    print('ERROR')
 
 ## 2
 def passwordValidation(*args):
