@@ -71,14 +71,44 @@ def try_out():
 try_out()
 
 ## 5
-joke = """Заходит однажды тестировщик в бар.
-Заказывает:
-кружку лимонада,
-2 кружки лимонада,
-0 кружек лимонада,
-999999999 кружек лимонада,
-ящерицу в стакане,
-–1 кружку лимонада,
-qwerty кружек лимонада.
-Первый реальный клиент заходит в бар и спрашивает, где туалет. Бар вспыхивает
-пламенем."""
+
+class Binge(Exception):
+    pass
+class Zero(Exception):
+    pass
+class LizardError(Exception):
+    pass
+class BurntBar(Exception):
+    pass
+class WrongOrder(Exception):
+    pass
+
+
+def joke():
+    try:
+        order = (input('Сколько кружек лимонада хотите?'))
+        if order == 'ящерицу в стакан':
+            raise LizardError
+        if order == 'где туалет?':
+            raise BurntBar
+        if int(order) > 1:
+            raise Binge
+        if int(order) == 0:
+            raise Zero
+        if int(order) < 0:
+            raise WrongOrder
+        print('Ваша кружка!')
+    except ValueError:
+        print('Такого числа не существует')
+    except Binge:
+        print('Не стоит пить так много')
+    except Zero:
+        print('Спасибо за компанию!')
+    except LizardError:
+        print('Обратитесь в соседнюю дверь')
+    except BurntBar:
+        print('Бар сгорел')
+    except WrongOrder:
+        print('Отдайте ваши кружки!')
+    joke()
+joke()
